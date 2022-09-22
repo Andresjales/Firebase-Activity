@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 266917299}
   - component: {fileID: 266917298}
   - component: {fileID: 266917297}
+  - component: {fileID: 266917300}
   m_Layer: 5
   m_Name: ButtonSignUp
   m_TagString: Untagged
@@ -363,19 +364,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 266917298}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 697726045}
-        m_TargetAssemblyTypeName: HttpManager, Assembly-CSharp
-        m_MethodName: ClickSignUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &266917298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +403,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266917295}
   m_CullTransparentMesh: 1
+--- !u!114 &266917300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266917295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a1c4c88a37fa842bb5abfe29557d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emailField: {fileID: 1241380321}
+  passwordField: {fileID: 1194035202}
 --- !u!1 &498200254
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,12 +605,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 697726044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e968c4b65d0088c44ae8df8de507ed5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 64178f88407fbb6438e7d9742c16f19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  URLSignUp: https://unitywebrequest-restapi.herokuapp.com
-  usernameField: {fileID: 1241380321}
-  passwordField: {fileID: 1194035202}
 --- !u!4 &697726046
 Transform:
   m_ObjectHideFlags: 0
@@ -634,6 +634,7 @@ GameObject:
   - component: {fileID: 845257155}
   - component: {fileID: 845257154}
   - component: {fileID: 845257153}
+  - component: {fileID: 845257156}
   m_Layer: 5
   m_Name: ButtonLogIn
   m_TagString: Untagged
@@ -704,19 +705,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 845257154}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 697726045}
-        m_TargetAssemblyTypeName: HttpManager, Assembly-CSharp
-        m_MethodName: ClickLogIn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &845257154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,6 +744,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845257151}
   m_CullTransparentMesh: 1
+--- !u!114 &845257156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845257151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d196184ffccde045bb76f67ed9f530e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emailField: {fileID: 1241380321}
+  passwordField: {fileID: 1194035202}
 --- !u!1 &1062741733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1018,7 @@ RectTransform:
   - {fileID: 1873840736}
   - {fileID: 1968421069}
   m_Father: {fileID: 1703166719}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1158,7 +1161,7 @@ RectTransform:
   - {fileID: 1851123226}
   - {fileID: 1827534711}
   m_Father: {fileID: 1703166719}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1208,13 +1211,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1241380322}
   m_TextComponent: {fileID: 1827534712}
   m_Placeholder: {fileID: 1851123227}
-  m_ContentType: 0
+  m_ContentType: 6
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 7
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 5
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -2080,8 +2083,8 @@ RectTransform:
   m_Children:
   - {fileID: 1938926148}
   - {fileID: 45992608}
-  - {fileID: 1194035201}
   - {fileID: 1241380320}
+  - {fileID: 1194035201}
   m_Father: {fileID: 1376639012}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "640134466103",
+    "firebase_url": "https://flappybird-firebase-default-rtdb.firebaseio.com",
+    "project_id": "flappybird-firebase",
+    "storage_bucket": "flappybird-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640134466103:android:669e1e16f3ced5a47a8db2",
+        "android_client_info": {
+          "package_name": "upb.andresjales.flappybird"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640134466103-2sqq839q5b57b33jal4ncf0o4m37ellr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf5qsy5O2HGjV0kPKJWEb9RVo0ltfxCXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640134466103-2sqq839q5b57b33jal4ncf0o4m37ellr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
