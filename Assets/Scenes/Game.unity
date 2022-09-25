@@ -1419,7 +1419,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1521267446}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ClickGetScores
+        m_MethodName: GetLeaderboard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2125,7 +2125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539d206a65da9d643bc9dda6fdeac384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
+  players:
+  - {fileID: 498306305}
+  - {fileID: 431343953}
+  - {fileID: 221964947}
+  - {fileID: 41406691}
+  - {fileID: 254013536}
   gameOverCanvas: {fileID: 278984678}
 --- !u!4 &1521267447
 Transform:

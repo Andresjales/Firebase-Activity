@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Firebase.Auth;
 using Firebase.Database;
+using Firebase.Extensions;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,9 +37,27 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
-    public void ClickGetScores()
+    public void GetLeaderboard()
     {
-
+        FirebaseDatabase.DefaultInstance.GetReference("users").OrderByChild("score").LimitToLast(5).GetValueAsync().ContinueWithOnMainThread(task =>
+        {
+            if (task.IsFaulted)
+            {
+                Debug.LogError("GetValueAsync encountered an error: " + task.Exception);
+            }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+                var data = (Dictionary<string, object>)snapshot.Value;
+                int i = 0;
+                foreach (var userDoc in data)
+                {
+                    var userObject = (Dictionary<string, object>)userDoc.Value;
+                    players[i].text = (i + 1) + ". " + userObject["username"].ToString() + " = " + userObject["score"].ToString();
+                    i++;
+                }
+            }
+        });
     }
 
     private void SetNewScore()

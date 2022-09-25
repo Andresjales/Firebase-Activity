@@ -34,7 +34,7 @@ public class UserInfo : MonoBehaviour
 
     void GetUserScore(string userId)
     {
-        FirebaseDatabase.DefaultInstance.GetReference("users/" + userId).GetValueAsync().ContinueWithOnMainThread(task =>
+        FirebaseDatabase.DefaultInstance.GetReference("users/" + userId + "/score").GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted)
             {
@@ -44,18 +44,16 @@ public class UserInfo : MonoBehaviour
             {
                 DataSnapshot snapshot = task.Result;
 
-                var data = (Dictionary<string, object>)snapshot.Value;
+                userScore.text = "HighScore: " + snapshot.Value.ToString();
 
-                userScore.text = "HighScore: " + data["score"].ToString();
-
-                PlayerPrefs.SetInt("HighScore", int.Parse(data["score"].ToString()));
+                PlayerPrefs.SetInt("HighScore", int.Parse(snapshot.Value.ToString()));
             }
         });
     }
 
     void GetUsername(string userId)
     {
-        FirebaseDatabase.DefaultInstance.GetReference("users/" + userId).GetValueAsync().ContinueWithOnMainThread(task => 
+        FirebaseDatabase.DefaultInstance.GetReference("users/" + userId + "/username").GetValueAsync().ContinueWithOnMainThread(task => 
         {
             if (task.IsFaulted)
             {
@@ -65,11 +63,9 @@ public class UserInfo : MonoBehaviour
             {
                 DataSnapshot snapshot = task.Result;
 
-                var data = (Dictionary<string, object>)snapshot.Value;
+                username.text = "Username: " + snapshot.Value.ToString();
 
-                username.text = "Username: " + data["username"].ToString();
-
-                PlayerPrefs.SetString("Username", data["username"].ToString());
+                PlayerPrefs.SetString("Username", snapshot.Value.ToString());
             }
         });
     }
