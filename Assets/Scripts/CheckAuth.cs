@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Firebase.Auth;
 using System;
 using UnityEngine.SceneManagement;
+using Firebase.Auth;
 
 public class CheckAuth : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
-        FirebaseAuth.DefaultInstance.StateChanged += HandleCheckAuth; 
+        HandleCheckAuth();
     }
 
-    private void HandleCheckAuth(object sender, EventArgs e)
+    private void HandleCheckAuth()
     {
         if (FirebaseAuth.DefaultInstance.CurrentUser != null)
         {

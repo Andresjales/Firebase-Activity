@@ -12,7 +12,7 @@ public class LogInButton : MonoBehaviour
 
     private Button logInButton;
 
-    void Start()
+    void Awake()
     {
         logInButton = GetComponent<Button>();
 
@@ -42,7 +42,7 @@ public class LogInButton : MonoBehaviour
         else
         {
             FirebaseUser newUser = logInTask.Result;
-            Debug.LogFormat("User signed in successfully: {0} ({1})", newUser.Email, newUser.UserId);
+            Debug.LogFormat("User loged in successfully: {0} ({1})", newUser.Email, newUser.UserId);
             SceneManager.LoadScene("Game");
         }
     }

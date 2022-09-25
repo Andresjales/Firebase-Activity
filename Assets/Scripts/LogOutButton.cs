@@ -9,7 +9,7 @@ public class LogOutButton : MonoBehaviour
 {
     private Button logOutButton;
 
-    private void Start()
+    private void Awake()
     {
         logOutButton = GetComponent<Button>();
 

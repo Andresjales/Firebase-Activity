@@ -9,7 +9,7 @@ public class ResetPassword : MonoBehaviour
     [SerializeField] InputField emailField;
     private Button resetPasswordButton;
 
-    void Start()
+    void Awake()
     {
         resetPasswordButton = GetComponent<Button>();
 
