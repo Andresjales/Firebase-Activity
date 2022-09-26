@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using Firebase.Auth;
 using Firebase.Database;
 using Firebase.Extensions;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     public void GetLeaderboard()
     {
-        FirebaseDatabase.DefaultInstance.GetReference("users").OrderByChild("score").LimitToLast(5).GetValueAsync().ContinueWithOnMainThread(task =>
+        FirebaseDatabase.DefaultInstance.GetReference("users").OrderByChild("score").LimitToFirst(5).GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted)
             {
@@ -48,12 +49,10 @@ public class GameManager : MonoBehaviour
             else if (task.IsCompleted)
             {
                 DataSnapshot snapshot = task.Result;
-                var data = (Dictionary<string, object>)snapshot.Value;
                 int i = 0;
-                foreach (var userDoc in data)
+                foreach (DataSnapshot userDoc in snapshot.Children.Reverse())
                 {
-                    var userObject = (Dictionary<string, object>)userDoc.Value;
-                    players[i].text = (i + 1) + ". " + userObject["username"].ToString() + " = " + userObject["score"].ToString();
+                    players[i].text = (i + 1) + ". " + userDoc.Child("username").Value.ToString() + " = " + userDoc.Child("score").Value.ToString();
                     i++;
                 }
             }
