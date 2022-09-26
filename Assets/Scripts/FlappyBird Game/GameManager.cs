@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     public void GetLeaderboard()
     {
-        FirebaseDatabase.DefaultInstance.GetReference("users").OrderByChild("score").LimitToFirst(5).GetValueAsync().ContinueWithOnMainThread(task =>
+        FirebaseDatabase.DefaultInstance.GetReference("users").OrderByChild("score").GetValueAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted)
             {
@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
 
         if (actualScore > PlayerPrefs.GetInt("HighScore", 0))
         {
-
             PlayerPrefs.SetInt("HighScore", actualScore);
 
             UserData data = new UserData();
